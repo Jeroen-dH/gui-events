@@ -1,9 +1,10 @@
 import tkinter
 
 clickcounter = 0
+update = ""
 gui = tkinter.Tk()
 gui. geometry("400x500")
-gui.title("Clicker V2")
+gui.title("Clicker V3")
 gui.configure(
     bg="gray"
 )
@@ -24,16 +25,24 @@ def colorchanger():
         gui.configure(bg="#00DC00")
     else:
         gui.configure(bg="gray")
-        
 
+def counterchanger(e):
+    global update, clickcounter
+    if update == 'up':
+        clickcounter *= 3
+    elif update == 'down':
+        clickcounter /=3
+    counter.config(text= clickcounter)
+        
 
 # de up button
 
 def up():
-    global clickcounter
+    global clickcounter,update
     clickcounter += 1
     counter.config(text=clickcounter)
     counter.pack()
+    update='up'
     gui.after(10, colorchanger)
     
 
@@ -65,10 +74,11 @@ counter.pack(
 
 # de Down button
 def down():
-    global clickcounter,e
+    global clickcounter,e,update
     clickcounter =clickcounter - 1
     counter.config(text=clickcounter)
     counter.pack()
+    update='down'
     gui.after(10, colorchanger)
     
 
@@ -88,5 +98,6 @@ button2.bind("<Enter>",hover)
 button2.bind("<Leave>",hover_leave)
 button1.bind("<Enter>",hover)
 button1.bind("<Leave>",hover_leave)
+counter.bind('<Double-Button>', counterchanger)
 
 gui.mainloop()
