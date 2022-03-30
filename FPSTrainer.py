@@ -13,6 +13,7 @@ list1 = ["druk op de w","druk op de a","druk op de s","druk op de d","druk op de
 list2 = ["<w>","<a>","<s>","<d>","<space>","<Button>","<Double-Button>","<Triple-Button>"]
 var1 = random.randint(0,7)
 
+
 gui = tkinter.Tk()
 gui.geometry("550x600")
 gui.title("FPSTrainer")
