@@ -5,7 +5,11 @@ from tkinter import messagebox
 from tkinter.messagebox import *
 import os
 import sys
+<<<<<<< HEAD
 temptimer = 0
+=======
+
+>>>>>>> 45563b387e58dfd1f68e758d7c888454c30ab72c
 timer=20
 points = 0
 a =False
